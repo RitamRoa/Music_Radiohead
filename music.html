@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music: Radiohead</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        
+    }
+    .bg{
+        position: fixed;
+        background-image: url('Radiohead _ TKOL.jpeg');
+        background-position: center;
+        background-size: cover;
+        height: 100%;
+        width: 100%;
+        top:0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        filter: blur(3px);
+        z-index: -1;
+        
+       
+}
+     .img{
+        position: relative;
+        z-index: 1;
+        top: 58px;
+        left: 890px;
+        border: 2px solid rgb(110, 6, 6);
+     }
+
+     .list li{
+        
+        list-style: none;
+        font-size: 20px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        float: right;
+        padding:10px;
+        font-weight: 600 ;
+        top: 30px;
+        right: 0px;
+        left: 0px;
+        bottom: 0;
+        z-index: 1;
+        position: relative;
+     }
+     .list a{
+        color: antiquewhite;
+        transition: color 0.3s ease;
+        
+     }
+     .list a:hover{
+        color:azure;
+     }
+     .content{
+        position: relative;
+        padding: 10px;
+     }
+     .left {
+        color: whitesmoke;
+        z-index: 1;
+        position: relative;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        top: 250px;
+        left: 260px;
+     }
+     .h1{
+        font-size: 50px;
+        color: rgb(61, 4, 4);
+     }
+     .h2{
+        color: rgb(227, 222, 162);
+        opacity: 0.8;
+     }
+     .button{
+        position: relative;
+        z-index: 1;
+        top:170px;
+        left: 700px;
+        right: 0;
+        bottom: 0;
+     }
+     .pause{
+        cursor: pointer;
+     }
+</style>
+<body>
+    <div class="bg"></div>
+   
+        <ul class="list">
+            <li><a href="">CONTACT US</a></li>
+            <li><a href="">MUSIC</a></li>
+            <li><a href="https://en.wikipedia.org/wiki/Radiohead">ABOUT</a></li>
+            <li><a href="">HOME</a></li>
+        </ul>
+        <div class="content">
+            <div class="left">
+                <h1 class="h1"><b>RADIOHEAD.</b></h1><br>
+                <h2 class="h2"><i>(Tap to Play or Pause!)</i></h2>
+            </div>
+            <div class="button">
+                <img src="pasue.webp" width= 50px height= 50px id="icon" class="pause">
+            </div>
+            <img src="686715.jpg" height= 200px width=300px class="img">
+        </div>
+        <audio id="music">
+            <source src="pyramid song.mp3" type="audio/mp3">
+        </audio>
+<script>
+    let music = document.getElementById("music");
+    let button = document.getElementById("icon");
+    
+      button.onclick = function(){
+        if (music.paused) {
+            music.play();
+            button.src="play.png" ;
+            
+        } else {
+            music.pause();
+            button.src="pasue.webp";
+        }
+      }
+</script>   
+</body>
+</html>
